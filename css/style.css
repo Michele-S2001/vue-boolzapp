@@ -29,3 +29,55 @@ ol,
 menu {
   list-style: none;
 }
+
+/* APP */ 
+#app {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas: 
+  "user contact"
+  "contacts currChat"
+  "contacts tools";
+  overflow: hidden;
+}
+
+/* PROFILE AREA */
+.profile-area {
+  grid-area: user;
+}
+
+/* CURRENT-CONTACT */
+.current-contact {
+  grid-area: contact;
+}
+
+/* CONTACTS-LIST */
+.contacts-list {
+  grid-area: contacts;
+  overflow: auto;
+}
+
+/* CURRENT-CHAT */
+.current-chat {
+  grid-area: currChat;
+  overflow: auto;
+}
+
+/* TOOLBAR */
+.toolBar {
+  grid-area: tools;
+}
+
+
+
+/* DEBUG */
+
+.debug #app {
+  border: 4px solid red;
+}
+
+.debug #app > * {
+  border: 2px solid black;
+}
