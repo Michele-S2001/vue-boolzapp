@@ -168,15 +168,19 @@ createApp({
           ],
         },
       ],
+
+      index: 0
     };
   },
 
   methods: {
     //funzioni
+    getChat(i) {
+      this.index = i;
+    },
   },
 
   mounted() {
     console.log(">> vue working <<");
-    console.log(this.contacts.avatar);
   },
 }).mount("#app");

@@ -188,6 +188,7 @@ input[type="text"] {
 .contact-item {
   border-top: 1.5px solid var(--grey-800);
   padding: 10px 20px;
+  user-select: none;
 }
 
 .contact-item:hover {

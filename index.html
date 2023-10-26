@@ -35,10 +35,12 @@
       
       <div class="profile-plate flex items-center gap-10">
 
-        <img class="profile-img" src="./img/avatar_1.jpg" alt="current contact profile image">
+        <img class="profile-img" :src="contacts[index].avatar">
 
         <div class="text-wrapper">
-          <p class="profile-name fs-15">Fabio</p>
+          <p class="profile-name fs-15">
+            {{contacts[index].name}}
+          </p>
           <p class="profile-last-access fs-13">
             Ultimo accesso oggi alle <time>12:00</time>
           </p>
@@ -91,7 +93,8 @@
         <!--start contact item -->
         <li class="contact-item flex justify-between items-center"
         v-for="(contact, i) in contacts"
-        :key="i">       
+        :key="i"
+        @click="getChat(i)">       
           <div class="profile-plate flex items-center gap-10">
             <img class="profile-img" :src="contact.avatar" alt="my profile pic">
             <div class="text-wrapper item-start">
@@ -120,41 +123,16 @@
       <div class="message-area fromMe">
         <div class="message">
           <p class="message__text">
-            Qual'è il cane più cattivo ?
+            non riesco a fare una ceppa
           </p>
           <time class="message__time">15:30</time>
         </div>
       </div>
 
-      <div class="message-area fromContact">
-        <div class="message">
-          <p class="message__text">ma che ne so io</p>
-          <time class="message__time">15:30</time>
-        </div>
-      </div>
+      <!-- class fromContact => for contact messages -->
 
-      <div class="message-area fromMe">
-        <div class="message">
-          <p class="message__text">
-            la "can-aglia" AHAHAAH
-          </p>
-          <time class="message__time">15:30</time>
-        </div>
-      </div>
+      <!-- class fromMe => for my messages -->
 
-      <div class="message-area fromContact">
-        <div class="message">
-          <p class="message__text">ma perché spari tutte queste scemenze</p>
-          <time class="message__time">15:30</time>
-        </div>
-      </div>
-
-      <div class="message-area fromContact">
-        <div class="message">
-          <p class="message__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem obcaecati nostrum, similique reiciendis animi repellendus voluptatibus quidem! Dicta error, deleniti molestias natus mollitia voluptatem veritatis, corporis voluptatibus inventore, eos omnis.</p>
-          <time class="message__time">15:30</time>
-        </div>
-      </div>
 
     </div>
     <!-- end current chat -->

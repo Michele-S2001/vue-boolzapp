@@ -22,3 +22,8 @@ Requisiti (in ordine di priorità):
 
   - MILESTONE 5: all'invio di un messaggio in chat ricevi un messaggio in automatico
 ]
+
+# boolzapp
+
+- al click su un contatto stampare sull'area
+  della chat corrente la chat tra me e quel contatto
