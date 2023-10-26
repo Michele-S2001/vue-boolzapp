@@ -56,6 +56,10 @@ input[type="text"] {
   display: flex;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -94,7 +98,7 @@ input[type="text"] {
   height: 100vh;
   display: grid;
   grid-template-columns: 330px 1fr;
-  grid-template-rows: 50px 1fr auto;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas: 
   "user contact"
   "contacts currChat"
@@ -127,7 +131,7 @@ input[type="text"] {
   background-color: var(--grey-600);
   border-left: 2px solid var(--grey-800);
 
-  padding: 0 20px;
+  padding: 7px 20px;
 }
 
 .current-contact .profile-last-access {
@@ -201,6 +205,45 @@ input[type="text"] {
   grid-area: currChat;
   overflow: auto;
   background-image: url(../img/mine.jpg);
+
+  padding: 30px 45px 0 45px;
+}
+
+.current-chat .message-area {
+  display: flex;
+  align-items: center;
+}
+
+.message-area.fromMe {
+  justify-content: end;
+}
+
+.message-area.fromMe > .message{
+  background-color: var(--light-green);
+}
+
+.message-area.fromContact > .message{
+  background-color: var(--white);
+}
+
+.message {
+  display: flex;
+  min-height: 50px;
+  border-radius: 14px;
+  padding: 0 10px;
+  background-color: red;
+  align-items: center;
+  max-width: 360px;
+}
+
+.message .message__text {
+  font-size: 16px;
+}
+
+.message .message__time {
+  font-size: 12px;
+  align-self: flex-end;
+  color: var(--grey-1200);
 }
 
 /* TOOLBAR */
@@ -227,5 +270,10 @@ input[type="text"] {
 } */
 
 /* .debug #app > * {
+  border: 2px solid black;
+} */
+
+/* .debug .current-chat > * {
+  min-height: 50px;
   border: 2px solid black;
 } */
