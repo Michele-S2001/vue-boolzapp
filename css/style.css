@@ -41,6 +41,16 @@ menu {
   max-width: 100%;
 }
 
+a {
+  display: block;
+  color: currentColor;
+}
+
+input[type="text"] {
+  border: none;
+  outline-color: var(--dark-blue);
+}
+
 /*  UTILITY CLASSES  */
 .flex {
   display: flex;
@@ -54,8 +64,16 @@ menu {
   align-items: center;
 }
 
+.item-start {
+  align-self: flex-start;
+}
+
 .grow-1 {
   flex-grow: 1;
+}
+
+.gap-5 {
+  gap: 5px;
 }
 
 .gap-10 {
@@ -75,7 +93,7 @@ menu {
 #app {
   height: 100vh;
   display: grid;
-  grid-template-columns: 270px 1fr;
+  grid-template-columns: 330px 1fr;
   grid-template-rows: 50px 1fr auto;
   grid-template-areas: 
   "user contact"
@@ -98,7 +116,7 @@ menu {
   color: var(--grey-1000);
 }
 
-.profile-plate .profile-img {
+.profile-plate #profile-img {
   max-width: 35px;
   border-radius: 999px;
 }
@@ -117,9 +135,65 @@ menu {
 }
 
 /* CONTACTS-LIST */
-.contacts-list {
+.side-bar {
   grid-area: contacts;
+  overflow: hidden;
+}
+
+/* enable notification section */
+.enable-notice .enable-icon {
+  font-size: 24px;
+  color: var(--light-blue);
+  border-radius: 50%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.side-bar .enable-notice {
+  background-color: var(--light-blue);
+  padding: 16px 10px;
+}
+
+/* search contacts bar */
+.side-bar .search-contacts-bar {
+  padding: 10px;
+  background-color: var(--grey-200);
+}
+
+.search-contacts-bar .search-contacts {
+  padding: 0 10px;
+  line-height: 25px;
+}
+
+.search-contacts-bar .search-icon {
+  padding: 6px 20px;
+  background-color: var(--white);
+  color: var(--grey-1000);
+}
+
+/* contacts list */
+.contacts-list {
   overflow: auto;
+}
+
+.profile-plate .profile-img {
+  max-width: 50px;
+  border-radius: 999px;
+}
+
+.contact-item {
+  border-top: 1.5px solid var(--grey-800);
+  padding: 10px 20px;
+}
+
+.contact-item .last-mess-hour {
+  color: var(--grey-1000);
+  font-weight: 500;
+}
+
+.contact-item .profile-last-access {
+  color: var(--grey-1000);
+  font-weight: 500;
 }
 
 /* CURRENT-CHAT */
@@ -141,9 +215,7 @@ menu {
 .chat-bar .w-bar {
   line-height: 40px;
   padding: 0 10px;
-  border: none;
   border-radius: 10px;
-  outline-color: var(--dark-blue);
 }
 
 

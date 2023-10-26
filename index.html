@@ -17,8 +17,8 @@
     <div class="profile-area flex justify-between items-center">
       
       <div class="profile-plate flex items-center gap-10">
-        <img class="profile-img" src="./img/avatar_io.jpg" alt="my profile pic">
-        <p class="profile-name f-size-15">Gianluca</p>
+        <img id="profile-img" src="./img/avatar_io.jpg" alt="my profile pic">
+        <p class="profile-name f-size-15">Michele S.</p>
       </div>
 
       <div class="profile-tools flex gap-10 items-center">
@@ -56,12 +56,73 @@
     <!-- end current contact bar -->
 
     <!-- start contacts list -->
-    <div class="contacts-list">
+    <div class="side-bar">
       
-      <!-- enable notifications -->
+      <!--start enable notifications -->
+      <div class="enable-notice flex gap-10 items-center">
+        <div class="enable-icon">
+          <i class="fa-solid fa-bell-slash"></i>
+        </div>
+        <div class="enable-recommendation">
+          <p class="fs-15">Ricevi notifiche di nuovi messaggi</p>
+          <a class="fs-13" href="#">Attiva notifiche sul desktop</a>
+        </div>
+      </div>
+      <!--end enable notifications -->
 
+      <!--start search contact bar -->
+      <div class="search-contacts-bar flex gap-5">
+        <div class="search-icon fs-15">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
 
+        <input
+         type="text"
+          class="search-contacts grow-1 fs-13"
+          placeholder="Cerca tra i tuoi contatti..."
+        >
 
+      </div>
+      <!--end search contact bar -->
+
+      <!--start contact list -->
+      <ul class="contacts-list">
+
+        <!--start contact item -->
+        <li class="contact-item flex justify-between items-center">       
+          <div class="profile-plate flex items-center gap-10">
+            <img class="profile-img" src="./img/avatar_io.jpg" alt="my profile pic">
+            <div class="text-wrapper item-start">
+              <p class="profile-name fs-15">Giovanna</p>
+              <p class="profile-last-access fs-13">
+                Ultimo messaggio inviato
+              </p>
+            </div>
+          </div>
+          <time class="last-mess-hour fs-13 item-start">
+            12:00
+          </time>   
+        </li>
+        <!-- end contact item -->
+
+        <!--start contact item -->
+        <li class="contact-item flex justify-between items-center"> 
+          <div class="profile-plate flex items-center gap-10">
+            <img class="profile-img" src="./img/avatar_3.jpg" alt="my profile pic">
+            <div class="text-wrapper item-start">
+              <p class="profile-name fs-15">Giovanna</p>
+              <p class="profile-last-access fs-13">
+                Ultimo messaggio inviato
+              </p>
+            </div>
+          </div>
+          <time class="last-mess-hour fs-13 item-start">
+            12:00
+          </time>   
+        </li>
+        <!-- end contact item -->        
+      </ul>
+      <!--end contact list -->
     </div>
     <!-- end contacts list -->
 
