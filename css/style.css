@@ -190,6 +190,14 @@ input[type="text"] {
   padding: 10px 20px;
 }
 
+.contact-item:hover {
+  background-color: var(--grey-800);
+}
+
+.active-contact {
+  background-color: var(--grey-800);
+}
+
 .contact-item .last-mess-hour {
   color: var(--grey-1000);
   font-weight: 500;

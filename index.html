@@ -89,11 +89,15 @@
       <ul class="contacts-list">
 
         <!--start contact item -->
-        <li class="contact-item flex justify-between items-center">       
+        <li class="contact-item flex justify-between items-center"
+        v-for="(contact, i) in contacts"
+        :key="i">       
           <div class="profile-plate flex items-center gap-10">
-            <img class="profile-img" src="./img/avatar_io.jpg" alt="my profile pic">
+            <img class="profile-img" :src="contact.avatar" alt="my profile pic">
             <div class="text-wrapper item-start">
-              <p class="profile-name fs-15">Giovanna</p>
+              <p class="profile-name fs-15">
+                {{ contact.name }}
+              </p>
               <p class="profile-last-access fs-13">
                 Ultimo messaggio inviato
               </p>
@@ -105,39 +109,6 @@
         </li>
         <!-- end contact item -->
 
-        <!--start contact item -->
-        <li class="contact-item flex justify-between items-center"> 
-          <div class="profile-plate flex items-center gap-10">
-            <img class="profile-img" src="./img/avatar_3.jpg" alt="my profile pic">
-            <div class="text-wrapper item-start">
-              <p class="profile-name fs-15">Giovanna</p>
-              <p class="profile-last-access fs-13">
-                Ultimo messaggio inviato
-              </p>
-            </div>
-          </div>
-          <time class="last-mess-hour fs-13 item-start">
-            12:00
-          </time>   
-        </li>
-        <!-- end contact item -->     
-        
-        <!--start contact item -->
-        <li class="contact-item flex justify-between items-center"> 
-          <div class="profile-plate flex items-center gap-10">
-            <img class="profile-img" src="./img/avatar_3.jpg" alt="my profile pic">
-            <div class="text-wrapper item-start">
-              <p class="profile-name fs-15">Giovanna</p>
-              <p class="profile-last-access fs-13">
-                Ultimo messaggio inviato
-              </p>
-            </div>
-          </div>
-          <time class="last-mess-hour fs-13 item-start">
-            12:00
-          </time>   
-        </li>
-        <!-- end contact item --> 
       </ul>
       <!--end contact list -->
     </div>
