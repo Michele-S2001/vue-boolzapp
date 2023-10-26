@@ -14,20 +14,54 @@
   <div id="app">
 
     <!-- start my profile -->
-    <div class="profile-area">
-      profile area
+    <div class="profile-area flex justify-between items-center">
+      
+      <div class="profile-plate flex items-center gap-10">
+        <img class="profile-img" src="./img/avatar_io.jpg" alt="my profile pic">
+        <p class="profile-name f-size-15">Gianluca</p>
+      </div>
+
+      <div class="profile-tools flex gap-10 items-center">
+        <i class="fa-solid fa-circle-notch"></i>
+        <i class="fa-solid fa-message"></i>
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>
+
     </div>
     <!-- end my profile -->
 
     <!-- start current contact bar -->
-    <div class="current-contact">
-      current contact
+    <div class="current-contact flex justify-between items-center">
+      
+      <div class="profile-plate flex items-center gap-10">
+
+        <img class="profile-img" src="./img/avatar_1.jpg" alt="current contact profile image">
+
+        <div class="text-wrapper">
+          <p class="profile-name fs-15">Fabio</p>
+          <p class="profile-last-access fs-13">
+            Ultimo accesso oggi alle <time>12:00</time>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="profile-tools flex gap-10 items-center">
+        <i class="fa-solid fa-circle-notch"></i>
+        <i class="fa-solid fa-message"></i>
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>  
+
     </div>
     <!-- end current contact bar -->
 
     <!-- start contacts list -->
     <div class="contacts-list">
-      contacts list
+      
+      <!-- enable notifications -->
+
+
+
     </div>
     <!-- end contacts list -->
 
@@ -38,8 +72,16 @@
     <!-- end current chat -->
 
     <!-- start toolbar -->
-    <div class="toolBar">
-      toolbar
+    <div class="chat-bar flex justify-between items-center">
+      <div class="emote-table">
+        <i class="fa-regular fa-face-smile"></i>
+      </div>
+
+      <input class="w-bar grow-1" type="text" placeholder="Scrivi messaggio">
+
+      <div class="mic-btn">
+        <i class="fa-solid fa-microphone"></i>
+      </div>
     </div>
     <!-- end toolbar -->
 

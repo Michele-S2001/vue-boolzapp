@@ -3,6 +3,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
 /* PALETTE */
@@ -12,9 +13,14 @@ html {
   --grey-200: #F5F2F4;
   --grey-400: #E9EAEB;
   --grey-600: #EBE9EB;
+  --grey-800: #E3E1E3;
+  --grey-1000: #ADAEAF;
+  --grey-1200: #6D7376;
   --light-green: #D7F9BC;
   --black: #000000;
   --light-blue: #8EDAFD;
+  --dark-blue: #001bb5;
+  --sand: #F3EEEA;
 }
 
 /* RESET */
@@ -30,27 +36,84 @@ menu {
   list-style: none;
 }
 
+* > img {
+  display: block;
+  max-width: 100%;
+}
+
+/*  UTILITY CLASSES  */
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.grow-1 {
+  flex-grow: 1;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+
 /* APP */ 
 #app {
   height: 100vh;
   display: grid;
-  grid-template-columns: 230px 1fr;
-  grid-template-rows: 50px 1fr 50px;
+  grid-template-columns: 270px 1fr;
+  grid-template-rows: 50px 1fr auto;
   grid-template-areas: 
   "user contact"
   "contacts currChat"
-  "contacts tools";
+  "contacts writing";
   overflow: hidden;
 }
 
 /* PROFILE AREA */
 .profile-area {
   grid-area: user;
+  background-color: var(--grey-600);
+  border-right: 2px solid var(--grey-800);
+
+  padding: 0 15px;
+}
+
+.profile-tools {
+  font-size: 16px;
+  color: var(--grey-1000);
+}
+
+.profile-plate .profile-img {
+  max-width: 35px;
+  border-radius: 999px;
 }
 
 /* CURRENT-CONTACT */
 .current-contact {
   grid-area: contact;
+  background-color: var(--grey-600);
+  border-left: 2px solid var(--grey-800);
+
+  padding: 0 20px;
+}
+
+.current-contact .profile-last-access {
+  color: var(--grey-1000);
 }
 
 /* CONTACTS-LIST */
@@ -63,21 +126,34 @@ menu {
 .current-chat {
   grid-area: currChat;
   overflow: auto;
+  background-image: url(../img/mine.jpg);
 }
 
 /* TOOLBAR */
-.toolBar {
-  grid-area: tools;
+.chat-bar {
+  grid-area: writing;
+  gap: 30px;
+  padding: 15px 30px;
+  background-color: var(--sand);
+  color: var(--grey-1200);
+}
+
+.chat-bar .w-bar {
+  line-height: 40px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 10px;
+  outline-color: var(--dark-blue);
 }
 
 
 
 /* DEBUG */
 
-.debug #app {
+/* .debug #app {
   border: 4px solid red;
-}
+} */
 
-.debug #app > * {
+/* .debug #app > * {
   border: 2px solid black;
-}
+} */
