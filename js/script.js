@@ -5,6 +5,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      index: 0,
       userName: 'Michele',
       searchedContact: '',
       stagedMessage: '',
@@ -172,7 +173,7 @@ createApp({
         },
       ],
 
-      index: 0
+      
     };
   },
 
@@ -181,6 +182,10 @@ createApp({
     getChat(i) {
       this.index = i;
     },
+
+    sentOrReceived(status) {
+      return status === 'received' ? 'received' : 'sent';
+    }
   },
 
   mounted() {

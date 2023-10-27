@@ -122,21 +122,18 @@
     <!-- start current chat -->
     <div class="current-chat flex flex-column gap-10">
 
-      <div v-for="(chat, i) in contacts" class="message-area sent">
+      <div v-for="(mess, i) in contacts[index].messages" 
+      :key="i" class="message-area"
+      :class="sentOrReceived(mess.status)">
+
         <div class="message">
           <p class="message__text">
-            Lorem ipsum dolor sit.
-            <!-- {{chat.messages[0].message}} -->
-            {{chat}}
+            {{mess.message}}
           </p>
           <time class="message__time">15:30</time>
         </div>
+
       </div>
-
-      <!-- v-for="(chat, i) in contacts[index]" -->
-      <!-- class fromContact => for contact messages -->
-      <!-- class fromMe => for my messages -->
-
     </div>
     <!-- end current chat -->
 
