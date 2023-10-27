@@ -143,7 +143,8 @@
         <i class="fa-regular fa-face-smile"></i>
       </div>
 
-      <input class="w-bar grow-1" type="text" placeholder="Scrivi messaggio" v-model="stagedMessage">
+      <input class="w-bar grow-1" type="text" placeholder="Scrivi messaggio" v-model="stagedMessage"
+      @keyup.enter="sendMessage()">
 
       <div class="mic-btn">
         <i class="fa-solid fa-microphone"></i>

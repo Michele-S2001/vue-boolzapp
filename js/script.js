@@ -185,11 +185,32 @@ createApp({
 
     sentOrReceived(status) {
       return status === 'received' ? 'received' : 'sent';
+    },
+
+    sendMessage() {
+      const stringCheck = this.stagedMessage.split(' ').join('');
+
+      if(stringCheck !== '') {
+        this.contacts[this.index].messages.push({
+          date: "10/01/2020 15:50:00",
+          message: this.stagedMessage,
+          status: "sent",
+        })
+  
+        this.stagedMessage = "";
+
+        setTimeout(() => {
+          this.contacts[this.index].messages.push({
+            date: "10/01/2020 15:50:00",
+            message: 'ok',
+            status: "received",
+          })
+        }, 2000)
+      } 
     }
   },
 
   mounted() {
     console.log(">> vue working <<");
-    // console.log(this.contacts[0].messages[2].message);
   },
 }).mount("#app");
