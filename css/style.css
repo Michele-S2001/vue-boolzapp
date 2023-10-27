@@ -224,15 +224,15 @@ input[type="text"] {
   max-width: 1000px;
 }
 
-.message-area.fromMe {
+.message-area.sent {
   justify-content: end;
 }
 
-.message-area.fromMe > .message{
+.message-area.sent > .message{
   background-color: var(--light-green);
 }
 
-.message-area.fromContact > .message{
+.message-area.received > .message{
   background-color: var(--white);
 }
 

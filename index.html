@@ -18,7 +18,7 @@
       
       <div class="profile-plate flex items-center gap-10">
         <img id="profile-img" src="./img/avatar_io.jpg" alt="my profile pic">
-        <p class="profile-name f-size-15">Michele S.</p>
+        <p class="profile-name f-size-15">{{userName}}</p>
       </div>
 
       <div class="profile-tools flex gap-10 items-center">
@@ -82,6 +82,7 @@
          type="text"
           class="search-contacts grow-1 fs-13"
           placeholder="Cerca tra i tuoi contatti..."
+          v-model="searchedContact"
         >
 
       </div>
@@ -94,7 +95,8 @@
         <li class="contact-item flex justify-between items-center"
         v-for="(contact, i) in contacts"
         :key="i"
-        @click="getChat(i)">       
+        @click="getChat(i)"
+        :class="index === i ? 'active-contact' : ''">       
           <div class="profile-plate flex items-center gap-10">
             <img class="profile-img" :src="contact.avatar" alt="my profile pic">
             <div class="text-wrapper item-start">
@@ -120,19 +122,20 @@
     <!-- start current chat -->
     <div class="current-chat flex flex-column gap-10">
 
-      <div class="message-area fromMe">
+      <div v-for="(chat, i) in contacts" class="message-area sent">
         <div class="message">
           <p class="message__text">
-            non riesco a fare una ceppa
+            Lorem ipsum dolor sit.
+            <!-- {{chat.messages[0].message}} -->
+            {{chat}}
           </p>
           <time class="message__time">15:30</time>
         </div>
       </div>
 
+      <!-- v-for="(chat, i) in contacts[index]" -->
       <!-- class fromContact => for contact messages -->
-
       <!-- class fromMe => for my messages -->
-
 
     </div>
     <!-- end current chat -->
@@ -143,7 +146,7 @@
         <i class="fa-regular fa-face-smile"></i>
       </div>
 
-      <input class="w-bar grow-1" type="text" placeholder="Scrivi messaggio">
+      <input class="w-bar grow-1" type="text" placeholder="Scrivi messaggio" v-model="stagedMessage">
 
       <div class="mic-btn">
         <i class="fa-solid fa-microphone"></i>

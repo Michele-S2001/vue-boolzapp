@@ -5,6 +5,9 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      userName: 'Michele',
+      searchedContact: '',
+      stagedMessage: '',
       contacts: [
         {
           name: "Michele",
@@ -182,5 +185,6 @@ createApp({
 
   mounted() {
     console.log(">> vue working <<");
+    // console.log(this.contacts[0].messages[2].message);
   },
 }).mount("#app");
