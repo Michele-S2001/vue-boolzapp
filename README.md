@@ -27,3 +27,6 @@ Requisiti (in ordine di priorità):
 
 - al click su un contatto stampare sull'area
   della chat corrente la chat tra me e quel contatto
+
+
+- se clicco sulla freccia, deve apparire il dropdown del messaggio corrispondente e sparire se riclicco la freccia

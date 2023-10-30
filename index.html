@@ -105,7 +105,7 @@
                 {{ contact.name }}
               </p>
               <p class="profile-last-access fs-13">
-                Ultimo messaggio inviato
+                {{ contact.messages.at(-1).message }}
               </p>
             </div>
           </div>
@@ -131,7 +131,22 @@
           <p class="message__text">
             {{mess.message}}
           </p>
-          <time class="message__time">15:30</time>
+          <div class="message__tools">
+
+            <div class="dropdown">
+              <button class="dropdown-toggle" @click="dropdownToggle(i)">
+                <i class="fa-solid fa-chevron-down fs-13 item-end"></i>
+              </button>
+  
+              <ul class="message__dropdown"
+              :class="{show: i === currentMessageIndex}">
+                <li>Message info</li>
+                <li @click="deleteMessage(i)">Delete message</li>
+              </ul>
+            </div>
+
+            <time class="message__time">15:30</time>
+          </div>
         </div>
 
       </div>

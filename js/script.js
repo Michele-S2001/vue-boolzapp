@@ -6,6 +6,7 @@ createApp({
   data() {
     return {
       index: 0,
+      currentMessageIndex: -1,
       userName: 'Michele',
       searchedContact: '',
       stagedMessage: '',
@@ -171,9 +172,7 @@ createApp({
             },
           ],
         },
-      ],
-
-      
+      ], 
     };
   },
 
@@ -181,6 +180,7 @@ createApp({
     //funzioni
     getChat(i) {
       this.index = i;
+      this.currentMessageIndex = -1;
     },
 
     sentOrReceived(status) {
@@ -208,6 +208,18 @@ createApp({
         }, 2000)
       } 
     },
+
+    deleteMessage(index) {
+      this.contacts[this.index].messages.splice(index, 1);
+    },
+
+    dropdownToggle(index) {
+      if(this.currentMessageIndex === index) {
+        this.currentMessageIndex = -1;
+      } else {
+        this.currentMessageIndex = index;
+      }
+    },
   },
 
   watch: {
@@ -233,24 +245,3 @@ createApp({
     console.log(">> vue working <<");
   },
 }).mount("#app");
-
-
-//---------------------- prove -----------------------------
-    // filter() {
-    
-    //   this.contacts.forEach((contact) => {
-    //     const searchedName = this.searchedContact.toLowerCase();
-    //     const nameLowerCase = contact.name.toLowerCase();
-        
-    //     const str = this.searchedContact.split(' ').join('');
-        
-    //     if(str !== ''
-    //       && nameLowerCase.includes(searchedName)) {
-    //       contact.visible = true;
-    //     } else if (str.length === 0){
-    //       contact.visible = true;
-    //     } else {
-    //       contact.visible = false;
-    //     }
-    //   });
-    // }

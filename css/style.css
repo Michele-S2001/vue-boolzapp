@@ -46,6 +46,11 @@ a {
   color: currentColor;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+}
+
 input[type="text"] {
   border: none;
   outline-color: var(--dark-blue);
@@ -70,6 +75,10 @@ input[type="text"] {
 
 .item-start {
   align-self: flex-start;
+}
+
+.item-end {
+  align-self: flex-end;
 }
 
 .grow-1 {
@@ -238,12 +247,56 @@ input[type="text"] {
 
 .message {
   display: flex;
+  gap: 10px;
   min-height: 50px;
   border-radius: 14px;
   padding: 0 10px;
   background-color: red;
   align-items: center;
   max-width: 360px;
+}
+
+.message .message__tools {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.message__dropdown.show {
+  display: block;
+}
+
+.message__dropdown {
+  position: absolute;
+  display: none;
+  top: 25px;
+  right: -41px;
+  white-space: nowrap;
+  background-color: var(--grey-200);
+  color: var(--grey-1200);
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px -1px rgba(0,0,0,0.9);
+  z-index: 2;
+}
+
+.message__dropdown > * {
+  padding: 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.message__dropdown > *:hover {
+  background-color: var(--grey-400);
+}
+
+.message__tools i {
+  color: var(--grey-1200);
 }
 
 .message .message__text {
