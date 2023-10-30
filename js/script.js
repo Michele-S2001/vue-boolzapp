@@ -211,6 +211,7 @@ createApp({
 
     deleteMessage(index) {
       this.contacts[this.index].messages.splice(index, 1);
+      this.currentMessageIndex = -1;
     },
 
     dropdownToggle(index) {
