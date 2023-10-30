@@ -207,6 +207,25 @@ createApp({
           })
         }, 2000)
       } 
+    },
+  },
+
+  watch: {
+    searchedContact(newSearch, oldSearch) { 
+      this.contacts.forEach((contact) => {
+        const searchedName = newSearch.toLowerCase();
+        const nameLowerCase = contact.name.toLowerCase();
+        
+        const str = newSearch.split(' ').join('');
+        
+        if(str !== ''
+          && nameLowerCase.includes(searchedName)
+          || str.length === 0) {
+          contact.visible = true;
+        } else {
+          contact.visible = false;
+        }
+      });
     }
   },
 
@@ -214,3 +233,24 @@ createApp({
     console.log(">> vue working <<");
   },
 }).mount("#app");
+
+
+//---------------------- prove -----------------------------
+    // filter() {
+    
+    //   this.contacts.forEach((contact) => {
+    //     const searchedName = this.searchedContact.toLowerCase();
+    //     const nameLowerCase = contact.name.toLowerCase();
+        
+    //     const str = this.searchedContact.split(' ').join('');
+        
+    //     if(str !== ''
+    //       && nameLowerCase.includes(searchedName)) {
+    //       contact.visible = true;
+    //     } else if (str.length === 0){
+    //       contact.visible = true;
+    //     } else {
+    //       contact.visible = false;
+    //     }
+    //   });
+    // }

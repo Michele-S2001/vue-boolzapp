@@ -83,7 +83,8 @@
           class="search-contacts grow-1 fs-13"
           placeholder="Cerca tra i tuoi contatti..."
           v-model="searchedContact"
-        >
+          title="cerca tra i tuoi contatti"
+          >
 
       </div>
       <!--end search contact bar -->
@@ -92,7 +93,7 @@
       <ul class="contacts-list">
 
         <!--start contact item -->
-        <li class="contact-item flex justify-between items-center"
+        <li v-show="contact.visible" class="contact-item flex justify-between items-center"
         v-for="(contact, i) in contacts"
         :key="i"
         @click="getChat(i)"
@@ -144,7 +145,8 @@
       </div>
 
       <input class="w-bar grow-1" type="text" placeholder="Scrivi messaggio" v-model="stagedMessage"
-      @keyup.enter="sendMessage()">
+      @keyup.enter="sendMessage()"
+      title="scrivi un messaggio qui">
 
       <div class="mic-btn">
         <i class="fa-solid fa-microphone"></i>
