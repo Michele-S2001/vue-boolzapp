@@ -301,6 +301,8 @@ input[type="text"] {
 
 .message .message__text {
   font-size: 16px;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .message .message__time {
