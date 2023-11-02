@@ -93,6 +93,7 @@
       <ul class="contacts-list">
 
         <!--start contact item -->
+        <!-- contact.name.toLowerCase().includes(searchedContact.toLowerCase()) -->
         <li v-show="contact.visible" class="contact-item flex justify-between items-center"
         v-for="(contact, i) in contacts"
         :key="i"
@@ -125,7 +126,7 @@
 
       <div v-for="(mess, i) in contacts[index].messages" 
       :key="i" class="message-area"
-      :class="sentOrReceived(mess.status)">
+      :class="mess.status">
 
         <div class="message">
           <p class="message__text">

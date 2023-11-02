@@ -183,10 +183,6 @@ createApp({
       this.currentMessageIndex = -1;
     },
 
-    sentOrReceived(status) {
-      return status === 'received' ? 'received' : 'sent';
-    },
-
     sendMessage() {
       const stringCheck = this.stagedMessage.split(' ').join('');
 
@@ -209,6 +205,18 @@ createApp({
       } 
     },
 
+    // filter (cont) {
+    //   if(
+    //     this.searchedContact.split(' ').join('') !== ''
+    //     && cont.name.toLowerCase().includes(this.searchedContact.toLowerCase()) ||
+    //     this.searchedContact.split(' ').join('') === 0
+    //   ) {
+    //     return true
+    //   } else {
+    //     return false
+    //   }
+    // },
+
     deleteMessage(index) {
       this.contacts[this.index].messages.splice(index, 1);
       this.currentMessageIndex = -1;
@@ -224,6 +232,7 @@ createApp({
   },
 
   watch: {
+
     searchedContact(newSearch, oldSearch) { 
       this.contacts.forEach((contact) => {
         const searchedName = newSearch.toLowerCase();
@@ -240,6 +249,7 @@ createApp({
         }
       });
     }
+    
   },
 
   mounted() {
